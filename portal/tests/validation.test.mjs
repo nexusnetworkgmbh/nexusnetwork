@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {text,uuid,email,password,loginPassword,date,amount,choice,pageNumber,searchTerm,safeNext} from '../lib/validation.ts';
+const form=values=>{const f=new FormData();Object.entries(values).forEach(([k,v])=>f.set(k,v));return f;};
+test('UUID rejects URL and query injection',()=>{assert.throws(()=>uuid("' OR true"));assert.throws(()=>uuid(''));assert.equal(uuid('10000000-0000-4000-8000-000000000001'),'10000000-0000-4000-8000-000000000001');});
+test('validation enforces lengths, required fields and email',()=>{assert.throws(()=>text(form({title:'a'.repeat(201)}),'title'));assert.throws(()=>text(form({title:'  '}),'title'));assert.throws(()=>email(form({email:'invalid'})));assert.equal(email(form({email:'TEST@example.invalid'})),'test@example.invalid');});
+test('passwords are never trimmed, weak passwords rejected',()=>{assert.throws(()=>password(form({password:'short'})));assert.equal(password(form({password:'  abcdefghijkl  '})),'  abcdefghijkl  ');assert.equal(loginPassword(form({password:'  abcdefghijkl  '})),'  abcdefghijkl  ');});
+test('date and money precision validated',()=>{assert.throws(()=>date(form({due:'2026-02-30'}),'due'));assert.equal(date(form({due:'2026-09-04'}),'due'),'2026-09-04');assert.throws(()=>amount(form({investment_amount:'-1'})));assert.throws(()=>amount(form({investment_amount:'1.123'})));assert.throws(()=>amount(form({investment_amount:'Infinity'})));assert.equal(amount(form({investment_amount:'1200.50'})),1200.5);assert.equal(amount(form({})),null);});
+test('enum and pagination input fail safely',()=>{assert.throws(()=>choice(form({role:'super_admin'}),'role',['partner']));assert.equal(pageNumber('-1'),1);assert.equal(pageNumber('Infinity'),1);assert.equal(pageNumber('2'),2);});
+test('search syntax escaped and redirects allowlisted',()=>{assert(!searchTerm('x),organization_id.eq.attack').includes(')'));assert.equal(safeNext('https://evil.invalid'),'/portal');assert.equal(safeNext('//evil.invalid'),'/portal');assert.equal(safeNext('/reset-password'),'/reset-password');});

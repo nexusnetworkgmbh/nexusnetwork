@@ -1,0 +1,67 @@
+# Dependencies, builds, caches and local outputs (all apps)
+node_modules/
+.next/
+out/
+dist/
+build/
+.pnpm-store/
+.turbo/
+.cache/
+.wrangler/
+.vinext/
+.vercel/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+next-env.d.ts
+/output/
+/outputs/
+/work/
+/tmp/
+/temp/
+/.local-history/
+
+# Environment files: only empty examples are public repository material
+.env*
+!.env.example
+
+# Keys, credential exports and local certificates
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.crt
+client_secret*.json
+credentials*.json
+service-account*.json
+service_account*.json
+.npmrc
+.netrc
+.supabase/
+supabase/.temp/
+supabase/.branches/
+.openai/
+
+# Local databases and backups; SQL migrations remain included
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.dump
+*.bak
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,20 @@
+[
+  {
+    "file": "portal/components/auth-page.tsx",
+    "kind": "credential-assignment",
+    "lineSHA256": "00b0919d0de606d5677ff9df56bebdf052bc3d46a726390f7dbf3172a7a380c3",
+    "reason": "The password property is a German UI notification, not a password value. Exact line hash only."
+  },
+  {
+    "file": "portal/scripts/live-auth-smoke.mjs",
+    "kind": "credential-assignment",
+    "lineSHA256": "b4c7607904376a8a88d5621aa9bb2f3b72ba284e9c3e34077d475b2b78345081",
+    "reason": "Intentionally incorrect test password for a failed-login assertion; not a credential."
+  },
+  {
+    "file": "portal/tests/validation.test.mjs",
+    "kind": "credential-assignment",
+    "lineSHA256": "4bcf2d0da0151c44b559f4ec91edd77377823a941ebf3b4134673e6c43dd253c",
+    "reason": "Synthetic whitespace-validation examples, never used for an account or service."
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "name": "nexusnetwork-portal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "supabase": "supabase"
+  },
+  "dependencies": {
+    "next": "16.2.6", "react": "19.2.6", "react-dom": "19.2.6",
+    "@supabase/ssr": "0.12.5", "@supabase/supabase-js": "2.112.4"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3", "@types/node": "22.19.19", "@types/react": "19.2.14", "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4", "eslint-config-next": "16.2.6",
+    "@electric-sql/pglite": "0.5.8", "supabase": "2.116.0"
+  }
+}

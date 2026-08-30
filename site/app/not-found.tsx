@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="landing"><p className="eyebrow"><span/> Fehler 404</p><h1>Diese Verbindung führt ins Leere.</h1><p className="lead">Die aufgerufene Seite wurde nicht gefunden oder ist nicht mehr verfügbar.</p><a className="button primary" href="/">Zur Startseite <span>→</span></a></main>}
