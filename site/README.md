@@ -1,26 +1,9 @@
-# Nexus Network Website
+# Nexus Network — öffentliche Website
 
-## Lokal starten
+Statischer Next.js-Export. Design, Animationen und SEO-Seiten bleiben erhalten. Der Partnerzugang führt same-origin nach /login/.
 
-Node.js 22 oder neuer verwenden, dann `npm install` und `npm run dev`. Der statische Produktionsstand wird mit `npm run build` im Ordner `out/` erzeugt. Dieser Ordner enthält ausschließlich statische Dateien und kann direkt von GitHub Pages ausgeliefert werden.
+Installation und Deployment-Build aus dem Repository-Stamm: `npm ci`, `npm run build`. Root-`out/` enthält Website **und** Portal. Nicht site/out allein veröffentlichen. Lokale Website-Entwicklung: `npm run dev:site`.
 
-## Konfiguration
+Öffentliche Domain-Konfiguration: NEXT_PUBLIC_APP_URL (Standard https://nexusnetwork.pro). Unternehmensdaten im Impressum/Datenschutz enthalten weiterhin Betreiber-Platzhalter. Das Kontaktformular hat bewusst keinen unbestätigten Versanddienst.
 
-Unternehmensdaten werden zentral in `app/company.ts` gepflegt. Vor dem Launch alle eckigen Platzhalter ersetzen. `.env.example` nach `.env.local` kopieren und Website-URL sowie `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT` setzen.
-
-GitHub Pages führt keinen Servercode aus. Das Formular sendet daher per HTTPS an einen später auszuwählenden Formular-Dienst, der serverseitige Validierung, Spam-Schutz, Rate-Limiting und E-Mail-Zustellung übernimmt. Ohne konfigurierten Endpunkt zeigt die Website einen Hinweis und verweist auf die direkte E-Mail-Adresse.
-
-## GitHub Pages
-
-Das Repository kann über eine GitHub-Actions-Workflow-Datei gebaut und der Inhalt von `out/` als Pages-Artefakt veröffentlicht werden. Bei Nutzung einer eigenen Domain wird die Domain in GitHub unter **Settings → Pages → Custom domain** hinterlegt. `NEXT_PUBLIC_SITE_URL` muss anschließend auf diese Domain zeigen, damit Canonicals, Sitemap und Social-Metadaten korrekt sind.
-
-## Google Search Console
-
-1. Website als Domain-Property anlegen und per DNS bestätigen.
-2. Nach dem Deployment `https://IHRE-DOMAIN/sitemap.xml` unter **Sitemaps** einreichen.
-3. Startseite und beide Zielgruppenseiten mit der URL-Prüfung testen.
-4. Indexierungsbericht und Core Web Vitals regelmäßig kontrollieren.
-
-## Vor dem Launch
-
-Reale Unternehmensdaten, Datenschutzhinweise, Formularanbieter und Domain ergänzen und rechtlich prüfen. Erst danach den Ratgeber indexierbar schalten. Redirects für später geänderte URLs in `next.config.ts` zentral pflegen.
+Siehe [Gesamtanleitung](../docs/STATIC-DEPLOYMENT.md). Der frühere verschachtelte Workflow wurde durch den echten Root-Workflow ersetzt.

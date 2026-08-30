@@ -3,5 +3,5 @@ export const company = {
   street: '[STRASSE UND HAUSNUMMER]', postalCode: '[PLZ]', city: '[ORT]', country: 'DE',
   email: '[E-MAIL-ADRESSE]', phone: '[TELEFONNUMMER]', ceo: '[GESCHÄFTSFÜHRER]',
   register: '[HANDELSREGISTER]', registerNumber: '[REGISTERNUMMER]', vatId: '[UST-ID]',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://nexusnetwork.pro',
+  url: process.env.NEXT_PUBLIC_APP_URL || 'https://nexusnetwork.pro',
 };

@@ -12,7 +12,7 @@ export default function Home() {
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Nexus Network Startseite"><BrandLogo priority /><span className="brand-words"><strong>NEXUS</strong><b>NETWORK</b></span></a>
       <nav aria-label="Hauptnavigation">{links.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
-      <a className="header-cta account-link" href={process.env.NEXT_PUBLIC_PORTAL_URL || 'http://127.0.0.1:3001/login'} aria-label="Partner-Login" title="Partner-Login"><span className="account-icon" aria-hidden="true" /></a>
+      <a className="header-cta account-link" href={'/login/'} aria-label="Partner-Login" title="Partner-Login"><span className="account-icon" aria-hidden="true" /></a>
     </header>
     <main id="top">
       <section className="hero">

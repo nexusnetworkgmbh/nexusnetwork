@@ -1,0 +1,18 @@
+{
+  "name": "nexusnetwork", "version": "1.1.0", "private": true, "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "workspaces": ["site", "portal"],
+  "scripts": {
+    "dev": "npm run dev --workspace=portal",
+    "dev:site": "npm run dev --workspace=site",
+    "build": "node scripts/build-static.mjs",
+    "preview": "node scripts/serve-static.mjs out 4173",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm run test --workspace=portal",
+    "test:static": "node --test tests/static.test.mjs",
+    "test:api": "node portal/scripts/api-security.mjs",
+    "security:source": "node scripts/security-audit.mjs worktree",
+    "security:build": "node scripts/audit-static.mjs"
+  }
+}

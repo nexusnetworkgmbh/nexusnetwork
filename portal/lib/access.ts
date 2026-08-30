@@ -1,5 +1,4 @@
-import 'server-only';
-import { redirect } from 'next/navigation';
+import { redirect } from '@/lib/navigation';
 import { configured, supabase } from './supabase';
 import { isAdmin, type Profile } from './domain';
 export async function account() {

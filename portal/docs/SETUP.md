@@ -1,3 +1,5 @@
+> HISTORISCH: Dieser Text beschreibt den ursprünglichen SSR-Stand, nicht die aktuelle statische Architektur. Verbindlich sind die drei Anleitungen unter ../../docs/STATIC-DEPLOYMENT.md, ../../docs/SUPABASE-PRODUCTION.md und ../../docs/SECURITY-STATIC.md.
+
 # Einrichtung und Deployment
 
 ## 1. Lokaler Stand

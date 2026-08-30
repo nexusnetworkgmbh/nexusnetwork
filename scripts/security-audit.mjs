@@ -15,7 +15,7 @@ const patterns=[
  ['credential-in-URL',/\b(?:https?|postgres(?:ql)?):\/\/[^\s/:'"<>]+:[^\s/@'"<>]+@/],
  ['credential-assignment',/\b(?:SUPABASE_SECRET_KEY|SUPABASE_SERVICE_ROLE_KEY|GOOGLE_CLIENT_SECRET|CLIENT_SECRET|SMTP_PASSWORD|PRIVATE_KEY|PASSWORD|API_KEY|SECRET)\s*[:=]\s*["'][^"'\r\n]{8,}["']/i],
  ];
-const keywords=/SUPABASE_SECRET_KEY|SUPABASE_SERVICE_ROLE_KEY|service_role|GOOGLE_CLIENT_SECRET|CLIENT_SECRET|SMTP_PASSWORD|PRIVATE_KEY|PASSWORD\s*=|API_KEY\s*=|SECRET\s*=/i;
+const keywords=/SUPABASE_SECRET_KEY|SUPABASE_SERVICE_ROLE_KEY|service_role|GOOGLE_CLIENT_SECRET|CLIENT_SECRET|SMTP_PASSWORD|PRIVATE_KEY|DATABASE_URL|POSTGRES_PASSWORD|JWT_SECRET|Bearer|Authorization|password|api_key|secret/i;
 function scan(label,bytes){
  if(bytes.includes(0))return;const content=bytes.toString('utf8');checked++;
  if(keywords.test(content))keywordFiles++;

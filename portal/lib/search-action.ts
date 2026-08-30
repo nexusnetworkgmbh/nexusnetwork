@@ -1,4 +1,4 @@
-'use server';
+'use client';
 import {queryRecords,type ListState} from './list-query';
 import {isSection,type Section} from './fields';
 import {text} from './validation';

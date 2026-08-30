@@ -2,7 +2,8 @@
 
 import { FormEvent, useState } from 'react';
 
-const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
+// Contact delivery requires a separately reviewed backend; fail closed until then.
+const endpoint: string | undefined = undefined;
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle'|'sending'|'sent'|'error'>('idle');

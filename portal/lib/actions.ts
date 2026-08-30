@@ -1,8 +1,9 @@
-'use server';
-import { redirect } from 'next/navigation';
-import { revalidatePath } from 'next/cache';
+'use client';
+import { redirect } from '@/lib/navigation';
+import { revalidatePath } from '@/lib/navigation';
 import { account, activeAccount, admin, tenant } from './access';
 import { supabase, configured, appUrl } from './supabase';
+import { googleOAuthEnabled } from './features';
 import { amount, choice, date, email, optionalId, password, loginPassword, text, uuid, ValidationError } from './validation';
 import { dealStatuses, taskStatuses, priorities } from './domain';
 import { isSection, onboardingFields, sections, type Section } from './fields';
@@ -36,12 +37,11 @@ export async function authenticate(mode:string,_state:ActionState,data:FormData)
   } catch(error){return fail(error);}
   redirect(destination);
 }
-export async function oauth(provider:'google'|'apple') {
-  if(!['google','apple'].includes(provider)) redirect('/login?notice=provider');
-  if(!configured() || (provider==='google'?process.env.AUTH_GOOGLE_ENABLED:process.env.AUTH_APPLE_ENABLED)!=='true') redirect('/login?notice=provider');
-  const db=await supabase();const {data,error}=await db.auth.signInWithOAuth({provider,options:{redirectTo:`${appUrl()}/auth/callback`,skipBrowserRedirect:true}});
-  if(error||!data.url) redirect('/login?notice=provider');
-  redirect(data.url);
+export async function oauth() {
+  if(!configured() || !googleOAuthEnabled) redirect('/login?notice=provider');
+  const db=await supabase();
+  const {error}=await db.auth.signInWithOAuth({provider:'google',options:{redirectTo:`${appUrl()}/auth/callback/`}});
+  if(error) redirect('/login?notice=provider');
 }
 export async function logout() {
   const db=await supabase();const {error}=await db.auth.signOut({scope:'global'});
@@ -70,7 +70,7 @@ export async function saveRecord(section:Section,id:string|null,_state:ActionSta
     const query=id?db.from(section).update(payload).eq('id',id).eq('organization_id',organizationId):db.from(section).insert({...payload,organization_id:organizationId,created_by:user.id});
     const {data:record,error}=await query.select('id').single();check(error);if(!record)throw new Error('Record unavailable');savedId=record.id;
   }catch(error){return fail(error);}
-  revalidatePath('/portal','layout');redirect(`/portal/${section}/${savedId}`);
+  revalidatePath('/portal','layout');redirect(`/portal/${section}/detail?id=${savedId}`);
 }
 export async function completeTask(id:string,_state:ActionState,_data:FormData):Promise<ActionState>{
   void _state;void _data;
@@ -81,7 +81,7 @@ export async function completeTask(id:string,_state:ActionState,_data:FormData):
 export async function addNote(id:string,_state:ActionState,data:FormData):Promise<ActionState>{
   const {db,user,organizationId}=await tenant();
   try {uuid(id);const result=await db.from('deal_notes').insert({organization_id:organizationId,deal_id:id,created_by:user.id,content:text(data,'content',5000)});check(result.error);}catch(error){return fail(error);}
-  revalidatePath(`/portal/deals/${id}`);return {success:'Notiz gespeichert.'};
+  revalidatePath(`/portal/deals/detail?id=${id}`);return {success:'Notiz gespeichert.'};
 }
 export async function onboarding(_state:ActionState,data:FormData):Promise<ActionState>{
   const {db}=await account();

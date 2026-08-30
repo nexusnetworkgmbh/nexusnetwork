@@ -1,3 +1,5 @@
+> HISTORISCH: Dieser Text beschreibt den ursprünglichen SSR-Stand, nicht die aktuelle statische Architektur. Verbindlich sind die drei Anleitungen unter ../../docs/STATIC-DEPLOYMENT.md, ../../docs/SUPABASE-PRODUCTION.md und ../../docs/SECURITY-STATIC.md.
+
 # Bestandsanalyse und Architekturentscheidung
 
 Stand: 30.08.2026, vor Portalimplementierung geprüft.
