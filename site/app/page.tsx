@@ -1,6 +1,7 @@
 const links = [['Leistungen', '#zusammenarbeit'], ['Für Finanzprofis', '#zielgruppen'], ['Warum Nexus Network', '#vorteile'], ['FAQ', '#faq']];
 import { ContactForm } from './contact-form';
 import { NetworkField } from './network-field';
+import { MobileNavigation } from './mobile-navigation';
 import Image from 'next/image';
 
 function BrandLogo({ priority = false }: { priority?: boolean }) {
@@ -12,7 +13,8 @@ export default function Home() {
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Nexus Network Startseite"><BrandLogo priority /><span className="brand-words"><strong>NEXUS</strong><b>NETWORK</b></span></a>
       <nav aria-label="Hauptnavigation">{links.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
-      <a className="header-cta account-link" href={'/login/'} aria-label="Partner-Login" title="Partner-Login"><span className="account-icon" aria-hidden="true" /></a>
+      <a className="header-cta" href="#kontakt">Kontakt<span className="cta-label"> aufnehmen</span></a>
+      <MobileNavigation links={links}/>
     </header>
     <main id="top">
       <section className="hero">
@@ -43,7 +45,7 @@ export default function Home() {
         <div className="audience-links"><a href="/finanzberater-anbindung"><strong>Selbstständige Finanzberater</strong><span>Professionelle Anbindung und unternehmerische Perspektive →</span></a><a href="/finanzanlagenvermittler"><strong>Finanzanlagenvermittler</strong><span>Strukturierte Zusammenarbeit für die Vermittlungstätigkeit →</span></a></div>
       </section>
       <section className="faq section" id="faq"><div className="section-heading"><p className="eyebrow"><span/> Häufige Fragen</p><h2>Was Finanzfachkräfte vor dem ersten Gespräch wissen möchten.</h2></div><div className="faq-list">{[['An wen richtet sich Nexus Network?','An selbstständige Finanzberater, Finanzanlagenvermittler und weitere Finanzanlagefachkräfte, die eine professionelle geschäftliche Anbindung suchen.'],['Wie beginnt eine Zusammenarbeit?','Mit einem unverbindlichen Kennenlerngespräch. Dabei klären wir Ihre aktuelle Situation, Ihre Ziele und die gegenseitigen Erwartungen.'],['Verspricht Nexus Network bestimmte Erträge?','Nein. Nexus Network macht keine Gewinn- oder Erfolgsversprechen. Im Mittelpunkt stehen eine professionelle Struktur und eine nachvollziehbare Zusammenarbeit.'],['Welche Voraussetzungen gelten?','Die konkreten fachlichen, gewerberechtlichen und organisatorischen Voraussetzungen werden individuell und transparent im Gespräch geklärt.']].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></section>
-      <section className="contact section" id="kontakt"><div><p className="eyebrow"><span/> Kontakt</p><h2>Lassen Sie uns herausfinden, ob wir zueinander passen.</h2><p>Schildern Sie uns kurz Ihre Situation. Wir melden uns persönlich und ohne unverbindliche Werbeversprechen bei Ihnen.</p><p className="direct">Direkter Kontakt<br/><a href="mailto:[E-MAIL-ADRESSE]">[E-MAIL-ADRESSE]</a></p></div><ContactForm/></section>
+      <section className="contact section" id="kontakt"><div><p className="eyebrow"><span/> Kontakt</p><h2>Lassen Sie uns herausfinden, ob wir zueinander passen.</h2><p>Schildern Sie uns kurz Ihre Situation. Wir melden uns persönlich und ohne unverbindliche Werbeversprechen bei Ihnen.</p><p className="direct">Direkter Kontakt<br/><a href="mailto:hello@nexusnetwork.pro">hello@nexusnetwork.pro</a></p><div className="contact-addresses"><p>Anbindung<br/><a href="mailto:anbindung@nexusnetwork.pro">anbindung@nexusnetwork.pro</a></p><p>Kooperation<br/><a href="mailto:kooperation@nexusnetwork.pro">kooperation@nexusnetwork.pro</a></p><p>Fragen<br/><a href="mailto:frage@nexusnetwork.pro">frage@nexusnetwork.pro</a></p></div></div><ContactForm/></section>
     </main>
     <footer><a className="brand" href="#top" aria-label="Nexus Network Startseite"><BrandLogo /><span className="brand-words"><strong>NEXUS</strong><b>NETWORK</b></span></a><p>Professionelle Verbindungen für Finanzanlagefachkräfte.</p><div><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/ratgeber/">Ratgeber</a></div><small>© {new Date().getFullYear()} Nexus Network. Alle Rechte vorbehalten.</small></footer>
   </>;

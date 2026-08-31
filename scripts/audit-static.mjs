@@ -4,8 +4,7 @@ const out=path.resolve('out');
 if(!fs.existsSync(path.join(out,'index.html')))throw new Error('Build /out first.');
 let files=0;const findings=[];
 const patterns=[
- /sb_secret_[A-Za-z0-9_-]+/,
- /service_role|SUPABASE_SECRET_KEY|SUPABASE_SERVICE_ROLE_KEY|SMTP_PASSWORD|GOOGLE_CLIENT_SECRET|CLIENT_SECRET|JWT_SECRET|POSTGRES_PASSWORD|DATABASE_URL/,
+ /SMTP_PASSWORD|CLIENT_SECRET|JWT_SECRET|POSTGRES_PASSWORD|DATABASE_URL/,
  /-----BEGIN (?:RSA |EC |OPENSSH |ENCRYPTED )?PRIVATE KEY-----/,
  /\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|GOCSPX-[A-Za-z0-9_-]{20,})\b/,
  /\beyJ[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\b/,

@@ -1,0 +1,202 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "Nexus Network | Professionelle Anbindung für Finanzberater",
+      "description": "Nexus Network verbindet selbstständige Finanzberater und Finanzanlagenvermittler mit einer professionellen, partnerschaftlichen Struktur.",
+      "h1": "Die Verbindung zwischen Finanzfachkräften und Möglichkeiten.",
+      "canonical": "https://nexusnetwork.pro/",
+      "robots": "index, follow",
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nexus Network",
+          "legalName": "Nexus Network",
+          "url": "https://nexusnetwork.pro",
+          "email": "[E-MAIL-ADRESSE]",
+          "telephone": "[TELEFONNUMMER]",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STRASSE UND HAUSNUMMER]",
+            "postalCode": "[PLZ]",
+            "addressLocality": "[ORT]",
+            "addressCountry": "DE"
+          }
+        }
+      ],
+      "links": [
+        "#top",
+        "#zusammenarbeit",
+        "#zielgruppen",
+        "#vorteile",
+        "#faq",
+        "/login/",
+        "#kontakt",
+        "#zielgruppen",
+        "/finanzberater-anbindung",
+        "/finanzberater-anbindung",
+        "/finanzanlagenvermittler",
+        "mailto:[E-MAIL-ADRESSE]",
+        "/datenschutz/",
+        "#top",
+        "/impressum/",
+        "/datenschutz/",
+        "/ratgeber/"
+      ]
+    },
+    {
+      "route": "/finanzberater-anbindung/",
+      "title": "Finanzberater-Anbindung | Nexus Network",
+      "description": "Professionelle Anbindung für selbstständige Finanzberater: Voraussetzungen, Ablauf und Zusammenarbeit mit Nexus Network.",
+      "h1": "Eine professionelle Anbindung für Ihre Finanzberatung.",
+      "canonical": "https://nexusnetwork.pro/",
+      "robots": "index, follow",
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nexus Network",
+          "legalName": "Nexus Network",
+          "url": "https://nexusnetwork.pro",
+          "email": "[E-MAIL-ADRESSE]",
+          "telephone": "[TELEFONNUMMER]",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STRASSE UND HAUSNUMMER]",
+            "postalCode": "[PLZ]",
+            "addressLocality": "[ORT]",
+            "addressCountry": "DE"
+          }
+        }
+      ],
+      "links": [
+        "/#kontakt"
+      ]
+    },
+    {
+      "route": "/finanzanlagenvermittler/",
+      "title": "Zusammenarbeit für Finanzanlagenvermittler | Nexus Network",
+      "description": "Informationen für Finanzanlagenvermittler, die eine professionelle Vermittlungsstruktur und partnerschaftliche Zusammenarbeit suchen.",
+      "h1": "Zusammenarbeit mit Struktur und klaren Ansprechpartnern.",
+      "canonical": "https://nexusnetwork.pro/",
+      "robots": "index, follow",
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nexus Network",
+          "legalName": "Nexus Network",
+          "url": "https://nexusnetwork.pro",
+          "email": "[E-MAIL-ADRESSE]",
+          "telephone": "[TELEFONNUMMER]",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STRASSE UND HAUSNUMMER]",
+            "postalCode": "[PLZ]",
+            "addressLocality": "[ORT]",
+            "addressCountry": "DE"
+          }
+        }
+      ],
+      "links": [
+        "/#kontakt"
+      ]
+    },
+    {
+      "route": "/impressum/",
+      "title": "Impressum | Nexus Network",
+      "description": "Anbieterkennzeichnung und rechtliche Angaben zu Nexus Network.",
+      "h1": "Impressum",
+      "canonical": "https://nexusnetwork.pro/",
+      "robots": "index, follow",
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nexus Network",
+          "legalName": "Nexus Network",
+          "url": "https://nexusnetwork.pro",
+          "email": "[E-MAIL-ADRESSE]",
+          "telephone": "[TELEFONNUMMER]",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STRASSE UND HAUSNUMMER]",
+            "postalCode": "[PLZ]",
+            "addressLocality": "[ORT]",
+            "addressCountry": "DE"
+          }
+        }
+      ],
+      "links": [
+        "/"
+      ]
+    },
+    {
+      "route": "/datenschutz/",
+      "title": "Datenschutz | Nexus Network",
+      "description": "Informationen zur Verarbeitung personenbezogener Daten bei Nexus Network.",
+      "h1": "Datenschutzerklärung",
+      "canonical": "https://nexusnetwork.pro/",
+      "robots": "index, follow",
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nexus Network",
+          "legalName": "Nexus Network",
+          "url": "https://nexusnetwork.pro",
+          "email": "[E-MAIL-ADRESSE]",
+          "telephone": "[TELEFONNUMMER]",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STRASSE UND HAUSNUMMER]",
+            "postalCode": "[PLZ]",
+            "addressLocality": "[ORT]",
+            "addressCountry": "DE"
+          }
+        }
+      ],
+      "links": [
+        "/"
+      ]
+    },
+    {
+      "route": "/ratgeber/",
+      "title": "Ratgeber für Finanzberater | Nexus Network",
+      "description": "Künftige Fachbeiträge zu Anbindung, Zusammenarbeit und unternehmerischen Fragen für Finanzanlagefachkräfte.",
+      "h1": "Ratgeber für Finanzanlagefachkräfte.",
+      "canonical": "https://nexusnetwork.pro/",
+      "robots": "noindex, follow",
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nexus Network",
+          "legalName": "Nexus Network",
+          "url": "https://nexusnetwork.pro",
+          "email": "[E-MAIL-ADRESSE]",
+          "telephone": "[TELEFONNUMMER]",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STRASSE UND HAUSNUMMER]",
+            "postalCode": "[PLZ]",
+            "addressLocality": "[ORT]",
+            "addressCountry": "DE"
+          }
+        }
+      ],
+      "links": [
+        "/"
+      ]
+    }
+  ],
+  "indexablePages": 5,
+  "robots": "User-Agent: *\nAllow: /\nDisallow: /api/\n\nHost: https://nexusnetwork.pro\nSitemap: https://nexusnetwork.pro/sitemap.xml\n",
+  "sitemap": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://nexusnetwork.pro</loc>\n<lastmod>2026-08-30T17:07:18.533Z</lastmod>\n<changefreq>weekly</changefreq>\n<priority>1</priority>\n</url>\n<url>\n<loc>https://nexusnetwork.pro/finanzberater-anbindung</loc>\n<lastmod>2026-08-30T17:07:18.533Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://nexusnetwork.pro/finanzanlagenvermittler</loc>\n<lastmod>2026-08-30T17:07:18.533Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://nexusnetwork.pro/impressum</loc>\n<lastmod>2026-08-30T17:07:18.533Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.3</priority>\n</url>\n<url>\n<loc>https://nexusnetwork.pro/datenschutz</loc>\n<lastmod>2026-08-30T17:07:18.533Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.3</priority>\n</url>\n</urlset>\n",
+  "artifact": {
+    "files": 212,
+    "bytes": 5741913,
+    "javascriptBytes": 2146861
+  }
+}

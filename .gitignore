@@ -39,12 +39,9 @@ service-account*.json
 service_account*.json
 .npmrc
 .netrc
-.supabase/
-supabase/.temp/
-supabase/.branches/
 .openai/
 
-# Local databases and backups; SQL migrations remain included
+# Local data and backups must not enter the public website
 *.db
 *.db-*
 *.sqlite

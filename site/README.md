@@ -1,9 +1,11 @@
 # Nexus Network — öffentliche Website
 
-Statischer Next.js-Export. Design, Animationen und SEO-Seiten bleiben erhalten. Der Partnerzugang führt same-origin nach /login/.
+Bestehendes Design, Netzwerkanimation und Informationsseiten in einer statischen Next.js-App.
+Installation und Veröffentlichungsvorbereitung im Repository-Stamm: `npm ci`, `npm run build`.
+Ausschließlich Root-`out/` enthält auch die abschließenden CSP-Metatags.
+Entwicklung: `npm run dev:site`; Vorschau: `npm run preview`.
 
-Installation und Deployment-Build aus dem Repository-Stamm: `npm ci`, `npm run build`. Root-`out/` enthält Website **und** Portal. Nicht site/out allein veröffentlichen. Lokale Website-Entwicklung: `npm run dev:site`.
-
-Öffentliche Domain-Konfiguration: NEXT_PUBLIC_APP_URL (Standard https://nexusnetwork.pro). Unternehmensdaten im Impressum/Datenschutz enthalten weiterhin Betreiber-Platzhalter. Das Kontaktformular hat bewusst keinen unbestätigten Versanddienst.
-
-Siehe [Gesamtanleitung](../docs/STATIC-DEPLOYMENT.md). Der frühere verschachtelte Workflow wurde durch den echten Root-Workflow ersetzt.
+Optionale öffentliche URL: `NEXT_PUBLIC_SITE_URL`, Standard https://nexusnetwork.pro.
+Unternehmensangaben in `app/company.ts` enthalten ausdrücklich noch zu ergänzende Platzhalter.
+Das Kontaktformular erstellt lokal einen E-Mail-Entwurf; die direkten Mail-Links funktionieren unabhängig von JavaScript.
+Siehe [Deployment](../docs/STATIC-DEPLOYMENT.md) und [Kontakt](../docs/CONTACT-FORM.md).

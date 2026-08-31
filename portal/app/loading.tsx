@@ -1,1 +1,0 @@
-export default function Loading(){return <main id="content" className="error-page" aria-busy="true"><p role="status">Arbeitsbereich wird geladen …</p><div className="skeleton"/><div className="skeleton"/><div className="skeleton"/></main>;}

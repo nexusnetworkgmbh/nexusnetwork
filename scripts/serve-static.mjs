@@ -13,7 +13,7 @@ http.createServer((req,res)=>{
    if(!url.pathname.endsWith('/')){res.writeHead(301,{Location:url.pathname+'/'+url.search});return res.end();}
    file=path.join(file,'index.html');
   }
-  if(!fs.existsSync(file)){res.writeHead(404);return res.end('Not found');}
+  if(!fs.existsSync(file)){res.writeHead(404,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});return fs.createReadStream(path.join(root,'404.html')).pipe(res);}
   if(!fs.realpathSync(file).startsWith(root+path.sep)){res.writeHead(403);return res.end();}
   res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store'});
   fs.createReadStream(file).pipe(res);

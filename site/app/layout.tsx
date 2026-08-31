@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const schema = { '@context':'https://schema.org', '@type':'Organization', name:company.name, legalName:company.legalName, url:company.url, email:company.email, telephone:company.phone, address:{ '@type':'PostalAddress', streetAddress:company.street, postalCode:company.postalCode, addressLocality:company.city, addressCountry:company.country } };
+  // Unverified operator placeholders must never be presented as factual structured data.
+  const schema = { '@context':'https://schema.org', '@type':'Organization', name:company.name, url:company.url, email:company.email, logo:company.url+'/nexus-brand.png' };
   return <html lang="de"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/></body></html>;
 }
