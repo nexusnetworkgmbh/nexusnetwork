@@ -13,7 +13,7 @@ export default function Home() {
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Nexus Network Startseite"><BrandLogo priority /><span className="brand-words"><strong>NEXUS</strong><b>NETWORK</b></span></a>
       <nav aria-label="Hauptnavigation">{links.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
-      <a className="header-cta" href="#kontakt">Kontakt<span className="cta-label"> aufnehmen</span></a>
+      <a className="header-cta" href="#kontakt" aria-label="Kontakt aufnehmen"><span className="header-cta-text">Kontakt<span className="cta-label"> aufnehmen</span></span><span className="header-cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
       <MobileNavigation links={links}/>
     </header>
     <main id="top">
