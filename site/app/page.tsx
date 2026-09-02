@@ -22,7 +22,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span/> Verbindung. Struktur. Perspektive.</p>
           <h1>Die Verbindung zwischen <em>Finanzfachkräften</em> und Möglichkeiten.</h1>
-          <p className="lead">Nexus Network ist die professionelle Anbindungsstelle für Finanzanlagefachkräfte. Wir schaffen die Verbindung zwischen Menschen, Kompetenzen und Möglichkeiten für eine nachhaltig ausgerichtete Zusammenarbeit.</p>
+          <p className="lead">Nexus Network ist die professionelle Anbindungsstelle für Finanzanlagefachkräfte. Die Verbindung zwischen Finanzfachkräften und passenden Möglichkeiten steht dabei im Mittelpunkt – für eine nachhaltig ausgerichtete Zusammenarbeit.</p>
           <div className="hero-actions"><a className="button primary" href="#kontakt">Kontakt aufnehmen <span>→</span></a><a className="button secondary" href="#zielgruppen">Mehr erfahren <span>↓</span></a></div>
           <div className="trust-row"><div><strong>Persönlich</strong><span>Direkte Ansprechpartner</span></div><div><strong>Professionell</strong><span>Klare Prozesse</span></div><div><strong>Partnerschaftlich</strong><span>Auf Augenhöhe</span></div></div>
         </div>

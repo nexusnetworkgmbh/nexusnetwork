@@ -63,6 +63,8 @@ test('homepage SEO content, images and external links are substantive',()=>{
  assert(!/<(?:strong|b)\b[^>]*>NEXUS</i.test(html),'brand name must not misuse emphasis tags');
  for(const link of html.matchAll(/<a\b[^>]*href="https?:\/\/[^\"]+"[^>]*>/g))assert(/rel="[^"]*noopener[^"]*noreferrer[^"]*"/.test(link[0]),'external links need safe rel attributes');
  for(const text of ['NEXUS Finanz GmbH &amp; Co. KG','§ 34f der Gewerbeordnung','LinkedIn','WhatsApp'])assert(html.includes(text),text);
+ const withoutHeading=html.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i,' ');
+ for(const word of ['Verbindung','zwischen','Finanzfachkräften','Möglichkeiten'])assert(new RegExp(`\\b${word}\\b`,'i').test(withoutHeading),`H1 word missing from body: ${word}`);
 });
 test('custom 404 remains nonindexable and links home',()=>{
  const html=fs.readFileSync(path.join(root,'404.html'),'utf8');assert(html.includes('Diese Verbindung führt ins Leere.'));assert(html.includes('noindex'));assert(html.includes('href="/"'));
