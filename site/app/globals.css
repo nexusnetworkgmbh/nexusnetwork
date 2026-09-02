@@ -40,6 +40,27 @@ section[id]{scroll-margin-top:108px}
   .contact form{padding:24px}
 }
 
+.knowledge-preview{background:linear-gradient(145deg,#0a1016,#060a0e);border-block:1px solid rgba(218,169,96,.14)}
+.knowledge-preview-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:46px;background:rgba(218,169,96,.18);border:1px solid rgba(218,169,96,.18)}
+.knowledge-preview-links a{display:grid;gap:14px;min-height:190px;padding:28px;background:#0b1117;transition:background .25s,transform .25s}
+.knowledge-preview-links a:hover{background:#111922;transform:translateY(-4px)}
+.knowledge-preview-links span,.knowledge-number{color:var(--gold-soft);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.knowledge-preview-links strong{color:#f1ece4;font-size:19px}.knowledge-preview-links small{color:#92999e;line-height:1.55}
+.knowledge-all{display:inline-block;margin-top:28px}
+
+.knowledge-hub{max-width:1180px}.knowledge-hub>.lead{max-width:900px}
+.knowledge-index{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+.knowledge-index a{padding:10px 14px;border:1px solid rgba(218,169,96,.22);color:#d8d2c9;font-size:12px;transition:.2s}
+.knowledge-index a:hover{border-color:var(--gold);color:var(--gold-soft)}
+.knowledge-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:58px;background:rgba(218,169,96,.17);border:1px solid rgba(218,169,96,.17)}
+.landing .knowledge-grid section{display:flex;flex-direction:column;max-width:none;margin:0;padding:34px;background:#0b1117;border:0;scroll-margin-top:24px}
+.landing .knowledge-grid h2{margin:12px 0 6px;color:#f1ece4;font-size:25px}
+.landing .knowledge-grid p:not(.knowledge-number){margin-bottom:24px}
+.source-link{margin-top:auto;color:var(--gold-soft);font-size:13px;line-height:1.5;text-decoration:underline;text-decoration-color:rgba(242,205,140,.35);text-underline-offset:4px}
+.knowledge-note{margin-top:40px;padding:34px;border:1px solid rgba(218,169,96,.2);background:rgba(218,169,96,.04)}
+.knowledge-note h2{margin-top:0}.knowledge-note p{max-width:850px}.back-link{display:inline-block;margin-top:42px}
+@media(max-width:800px){.knowledge-preview-links,.knowledge-grid{grid-template-columns:1fr}.knowledge-preview-links a{min-height:0}}
+
 /* Keep the frame independent of the image filter so its gold stays unchanged.
    Contrast maps the dark matte to black; screen blends it into the page. */
 .brand-logo-frame{display:block;width:84px;padding:5px;flex-shrink:0;border:1px solid var(--gold);border-radius:3px;background:transparent;box-shadow:0 0 18px rgba(224,174,101,.16)}

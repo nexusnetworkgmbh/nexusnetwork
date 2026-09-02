@@ -163,11 +163,11 @@
     },
     {
       "route": "/ratgeber/",
-      "title": "Ratgeber für Finanzberater | Nexus Network",
-      "description": "Künftige Fachbeiträge zu Anbindung, Zusammenarbeit und unternehmerischen Fragen für Finanzanlagefachkräfte.",
-      "h1": "Ratgeber für Finanzanlagefachkräfte.",
+      "title": "Wissen für Finanzanlagenvermittler | Nexus Network",
+      "description": "Verständlicher Überblick zu § 34f GewO, IHK-Sachkunde, Erlaubnis, Vermittlerregister, Berufshaftpflicht und FinVermV.",
+      "h1": "Orientierung für Finanzanlagenvermittler.",
       "canonical": "https://nexusnetwork.pro/",
-      "robots": "noindex, follow",
+      "robots": "index, follow",
       "jsonLd": [
         {
           "@context": "https://schema.org",

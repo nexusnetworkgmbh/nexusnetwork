@@ -38,11 +38,18 @@ test('no removed route or second app assets exported',()=>{
  assert.deepEqual(lock.packages[''].workspaces,['site']);
  assert(!Object.keys(lock.packages).some(p=>/supabase|pglite|(?:^|\/)portal$/.test(p)));
 });
-test('sitemap: same five indexable pages and no false build timestamps',()=>{
- assert.equal(after.indexablePages,5);assert.equal(after.indexablePages,before.indexablePages);
+test('sitemap: six substantive indexable pages and no false build timestamps',()=>{
+ assert.equal(after.indexablePages,6);
  const urls=[...after.sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
  assert.deepEqual(urls,after.pages.filter(p=>!p.robots.includes('noindex')).map(p=>p.canonical));
  assert(!after.sitemap.includes('<lastmod>'));assert(after.robots.includes('Allow: /'));assert(after.robots.includes('Sitemap: https://nexusnetwork.pro/sitemap.xml'));
+});
+test('knowledge hub uses official sources and careful qualification language',()=>{
+ const html=read('/ratgeber/');
+ for(const id of ['erlaubnis','sachkunde','qualifikationen','register','versicherung','pflichten'])assert(html.includes(`id="${id}"`),id);
+ for(const source of ['gesetze-im-internet.de/gewo/__34f.html','gesetze-im-internet.de/finvermv/__4.html','vermittlerregister.info/vermittler','ihk.de/berlin/'])assert(html.includes(source),source);
+ assert(html.includes('Nicht jeder Antragsteller muss zwingend dieselbe IHK-Prüfung ablegen.'));
+ assert(!html.includes('Wissen im Aufbau'));assert(!html.includes('noindex'));
 });
 test('current logo, OG and deployment markers',()=>{
  assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root,'nexus-brand.png'))).digest('hex'),'3890e72dbf62e03386b0e3567430048cf11989b4c46ae77a6d02fec308d63855');

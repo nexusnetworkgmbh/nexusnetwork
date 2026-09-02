@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 export function MobileNavigation({ links }: { links: string[][] }) {
   const menu = useRef<HTMLDetailsElement>(null);
-  const mobileLabels = ['Leistungen ansehen', 'Informationen für Finanzprofis', 'Vorteile von Nexus Network', 'Fragen und Antworten'];
+  const mobileLabels = ['Leistungen ansehen', 'Informationen für Finanzprofis', 'Vorteile von Nexus Network', 'Wissensbereich öffnen', 'Fragen und Antworten'];
   return <details className="mobile-menu" ref={menu} onKeyDown={event => {
     if (event.key === 'Escape' && menu.current) {
       menu.current.open = false;
