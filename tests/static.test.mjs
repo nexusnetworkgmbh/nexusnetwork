@@ -48,7 +48,7 @@ test('knowledge hub uses official sources and careful qualification language',()
  const html=read('/ratgeber/');
  for(const id of ['erlaubnis','sachkunde','qualifikationen','register','versicherung','pflichten'])assert(html.includes(`id="${id}"`),id);
  for(const source of ['gesetze-im-internet.de/gewo/__34f.html','gesetze-im-internet.de/finvermv/__4.html','vermittlerregister.info/vermittler','ihk.de/berlin/'])assert(html.includes(source),source);
- assert(html.includes('Nicht jeder Antragsteller muss zwingend dieselbe IHK-Prüfung ablegen.'));
+ assert(html.includes('Nicht jeder Antragsteller muss dieselbe IHK-Prüfung ablegen.'));
  assert(!html.includes('Wissen im Aufbau'));assert(!html.includes('noindex'));
 });
 test('current logo, OG and deployment markers',()=>{
