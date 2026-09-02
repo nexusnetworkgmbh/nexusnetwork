@@ -88,3 +88,32 @@ section[id]{scroll-margin-top:108px}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Semantic brand text keeps the existing appearance without strong/b tags. */
+.brand-name{font-size:17px;font-weight:700;letter-spacing:.2em;color:#fff}
+.brand-subname{font-size:9px;font-weight:700;letter-spacing:.43em;color:var(--gold-soft)}
+
+.profile{background:radial-gradient(circle at 88% 20%,rgba(216,164,88,.06),transparent 28%),#080d12}
+.profile-copy{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,96px);margin-top:46px}
+.profile-copy p{margin:0 0 20px;color:#a8afb2;font-size:16px;line-height:1.78}
+.profile-copy a,.orientation a{color:var(--gold-soft);text-decoration:underline;text-decoration-color:rgba(242,205,140,.38);text-underline-offset:4px}
+.profile-copy a:hover,.orientation a:hover{color:#fff;text-decoration-color:var(--gold-soft)}
+.orientation{margin-top:30px;padding:22px 26px;border:1px solid rgba(218,169,96,.18);background:rgba(218,169,96,.035)}
+.orientation p{margin:0;color:#9fa6aa;font-size:14px;line-height:1.7}
+.orientation span{display:block;margin-bottom:5px;color:#efe2cd;font-weight:700}
+
+footer{grid-template-columns:1fr 1fr}
+footer>.brand{justify-content:flex-start;font-size:inherit;gap:14px}
+footer .footer-links,footer .social-sharing{display:flex;justify-content:flex-end;align-items:center;gap:24px;font-size:12px}
+footer .footer-links a,footer .social-sharing a{color:#bbb;transition:color .2s}
+footer .footer-links a:hover,footer .social-sharing a:hover{color:var(--gold-soft)}
+footer .social-sharing{grid-column:1/-1;justify-content:flex-start;padding-top:20px;border-top:1px solid #20343b;flex-wrap:wrap}
+footer .social-sharing span{color:#7f878d}
+footer small{border-top:0;padding-top:0}
+
+@media(max-width:900px){.profile-copy{grid-template-columns:1fr;gap:0}}
+@media(max-width:560px){
+  .brand-name{font-size:13px}.brand-subname{font-size:7px}
+  footer{grid-template-columns:1fr}
+  footer .footer-links,footer .social-sharing{justify-content:flex-start;flex-wrap:wrap}
+}

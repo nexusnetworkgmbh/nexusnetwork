@@ -55,6 +55,15 @@ test('contact CTA, four valid mail links, mobile navigation and no-JS fallback',
  for(const recipient of ['hello','anbindung','kooperation','frage'])assert(html.includes('mailto:'+recipient+'@nexusnetwork.pro'));
  assert(html.includes('Mobile Hauptnavigation'));assert(html.includes('E-Mail vorbereiten'));assert(html.includes('<noscript>'));assert(html.includes('fieldset disabled'));
 });
+test('homepage SEO content, images and external links are substantive',()=>{
+ const html=read('/');
+ const visible=html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&[a-z#0-9]+;/gi,' ');
+ assert(visible.trim().split(/\s+/).length>=800,'homepage should contain at least 800 indexable words');
+ for(const image of html.matchAll(/<img\b[^>]*>/g))assert(/\balt="[^"]+"/.test(image[0]),'images need meaningful alt text');
+ assert(!/<(?:strong|b)\b[^>]*>NEXUS</i.test(html),'brand name must not misuse emphasis tags');
+ for(const link of html.matchAll(/<a\b[^>]*href="https?:\/\/[^\"]+"[^>]*>/g))assert(/rel="[^"]*noopener[^"]*noreferrer[^"]*"/.test(link[0]),'external links need safe rel attributes');
+ for(const text of ['NEXUS Finanz GmbH &amp; Co. KG','§ 34f der Gewerbeordnung','LinkedIn','WhatsApp'])assert(html.includes(text),text);
+});
 test('custom 404 remains nonindexable and links home',()=>{
  const html=fs.readFileSync(path.join(root,'404.html'),'utf8');assert(html.includes('Diese Verbindung führt ins Leere.'));assert(html.includes('noindex'));assert(html.includes('href="/"'));
 });
