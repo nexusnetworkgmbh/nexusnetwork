@@ -81,4 +81,6 @@ test('public information, headings and visual design preserved apart from intend
  for(const text of ['Kennenlernen','Einordnung','Anbindung','Begleitung','Direkte Kommunikation','Professionelle Abläufe','Individuelle Perspektive','Langfristige Ausrichtung','network-canvas','brand-logo-frame'])assert(html.includes(text));
  const network=fs.readFileSync('site/app/network-field.tsx','utf8');
  assert(network.includes("prefers-reduced-motion: reduce"));assert(network.includes("IntersectionObserver"));assert(network.includes("visibilitychange"));assert(network.includes('Math.min(devicePixelRatio||1,1.35)'));
+ assert(network.includes("addEventListener('touchstart',touchMove,{passive:true})"));assert(network.includes("addEventListener('touchmove',touchMove,{passive:true})"));assert(network.includes("addEventListener('touchend',touchEnd,{passive:true})"));
+ assert(network.includes('Math.max(0,Math.min(1,'));
 });
