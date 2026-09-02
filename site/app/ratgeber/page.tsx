@@ -1,8 +1,5 @@
-export const metadata = {
-  alternates: { canonical: '/ratgeber/' },
-  title: 'Wissen für Finanzanlagenvermittler | Nexus Network',
-  description: 'Verständlicher Überblick zu § 34f GewO, IHK-Sachkunde, Erlaubnis, Vermittlerregister, Berufshaftpflicht und FinVermV.',
-};
+import { pageMetadata } from '../company';
+export const metadata = pageMetadata('/ratgeber/','Wissen für Finanzanlagenvermittler | Nexus Network','Verständlicher Überblick zu § 34f GewO, IHK-Sachkunde, Erlaubnis, Vermittlerregister, Berufshaftpflicht und FinVermV.');
 
 const external = { target: '_blank', rel: 'noopener noreferrer' } as const;
 

@@ -1,21 +1,17 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { company } from './company';
+import { company, pageMetadata } from './company';
 
 const description = 'Nexus Network verbindet Finanzberater und Finanzanlagenvermittler durch klare Anbindung, feste Ansprechpartner und verlässliche Prozesse im beruflichen Alltag.';
 
 export const metadata: Metadata = {
+  ...pageMetadata('/', 'Nexus Network | Professionelle Anbindung für Finanzberater', description),
   metadataBase: new URL(company.url),
-  title: 'Nexus Network | Professionelle Anbindung für Finanzberater',
-  description,
-  alternates: { canonical: '/' },
   icons: {
     icon: [{ url: '/nexus-brand.png', type: 'image/png' }],
     shortcut: '/nexus-brand.png',
     apple: '/nexus-brand.png',
   },
-  openGraph: { type:'website', locale:'de_DE', siteName:'Nexus Network', title:'Nexus Network | Professionelle Anbindung für Finanzberater', description, images:[{url:'/og.png?v=nexus-network',width:1731,height:909,alt:'Nexus Network – Die Verbindung für Finanzanlagefachkräfte'}] },
-  twitter: { card:'summary_large_image', title:'Nexus Network', description, images:['/og.png?v=nexus-network'] },
   robots: { index:true, follow:true },
 };
 

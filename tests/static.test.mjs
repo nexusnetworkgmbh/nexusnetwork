@@ -13,7 +13,9 @@ for(const page of after.pages){
   const previous=before.pages.find(p=>p.route===page.route);
   for(const key of ['title','description','h1','robots'])assert.equal(page[key],previous[key],key);
   assert.equal(page.canonical,'https://nexusnetwork.pro'+page.route);
-  assert.equal([...read(page.route).matchAll(/<h1[\s>]/g)].length,1);
+  const html=read(page.route);
+  assert.equal(html.match(/property="og:url" content="([^"]+)"/)?.[1],page.canonical,'og:url');
+  assert.equal([...html.matchAll(/<h1[\s>]/g)].length,1);
   assert(page.jsonLd.length);for(const schema of page.jsonLd){assert.equal(schema['@type'],'Organization');assert.equal(schema.email,'hello@nexusnetwork.pro');assert(!JSON.stringify(schema).includes('[STRASSE'));assert(!schema.telephone);}
  });
  test('links/assets/CSP: '+page.route,()=>{
