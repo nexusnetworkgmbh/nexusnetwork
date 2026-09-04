@@ -88,4 +88,5 @@ test('public information, headings and visual design preserved apart from intend
  assert(network.includes("prefers-reduced-motion: reduce"));assert(network.includes("IntersectionObserver"));assert(network.includes("visibilitychange"));assert(network.includes('Math.min(devicePixelRatio||1,1.35)'));
  assert(network.includes("addEventListener('touchstart',touchMove,{passive:true})"));assert(network.includes("addEventListener('touchmove',touchMove,{passive:true})"));assert(network.includes("addEventListener('touchend',touchEnd,{passive:true})"));
  assert(network.includes('Math.max(0,Math.min(1,'));
+ assert(network.includes('touchActive?4.2:1'));assert(network.includes('touchActive?.18:.055'));assert(network.includes('*touchBoost*Math.sin'));
 });
