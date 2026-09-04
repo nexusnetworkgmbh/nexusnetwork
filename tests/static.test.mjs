@@ -67,7 +67,7 @@ test('contact CTA, four valid mail links, mobile navigation and no-JS fallback',
 test('homepage SEO content, images and external links are substantive',()=>{
  const html=read('/');
  const description=after.pages.find(page=>page.route==='/')?.description??'';
- assert(description.length>=140&&description.length<=160,'homepage description should be 140–160 characters');
+ assert(description.length>=140&&description.length<=150,'homepage description should be 140–150 characters');
  assert(description.trim().split(/\s+/).length>=16,'homepage description should contain at least 16 words');
  const visible=html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&[a-z#0-9]+;/gi,' ');
  assert(visible.trim().split(/\s+/).length>=800,'homepage should contain at least 800 indexable words');

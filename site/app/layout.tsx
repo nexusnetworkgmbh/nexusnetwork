@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { company, pageMetadata } from './company';
 
-const description = 'Nexus Network verbindet Finanzberater und Finanzanlagenvermittler durch klare Anbindung, feste Ansprechpartner und verlässliche Prozesse im beruflichen Alltag.';
+const description = 'Nexus Network verbindet Finanzberater und Finanzanlagenvermittler mit klarer Anbindung, direktem Austausch und sicheren Abläufen im Berufsalltag.';
 
 export const metadata: Metadata = {
   ...pageMetadata('/', 'Nexus Network | Professionelle Anbindung für Finanzberater', description),
